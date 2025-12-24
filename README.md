@@ -19,3 +19,7 @@
 You can run the script directly from your terminal as Administrator without cloning the repository.
 ```powershell
 irm https://raw.githubusercontent.com/nhatpse/jdk-switch/main/jdk-switch.ps1 | iex
+```
+* **Backup:** Universal Command (If Option 1 fails / For older Windows) Use this if you see SSL/TLS errors or Policy restrictions.
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('[https://raw.githubusercontent.com/nhatpse/jdk-switch/main/jdk-switch.ps1](https://raw.githubusercontent.com/nhatpse/jdk-switch/main/jdk-switch.ps1)'))```
